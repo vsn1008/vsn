@@ -1,0 +1,101 @@
+:root {
+  --bg-color: #0a1624;
+  --text-color: #ffffff;
+  --secondary-bg-color: #111f33;
+  --accent-color: #50a8eb;
+  --hint-color: #9bb2d4;
+  --button-color: #50a8eb;
+  --button-text-color: #0a1624;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  padding: clamp(1.5rem, 2vw + 1rem, 3.5rem) 1.5rem 4rem;
+}
+
+.layout {
+  width: min(720px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.65;
+}
+
+h1 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.8rem, 1.2rem + 1vw, 2.5rem);
+}
+
+.open-telegram {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  transition: background 150ms ease, border 150ms ease;
+}
+
+.open-telegram:hover,
+.open-telegram:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.products {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.checkout-button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--button-text-color);
+  background: var(--button-color);
+  box-shadow: 0 16px 30px rgba(80, 168, 235, 0.35);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.checkout-button:hover,
+.checkout-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(80, 168, 235, 0.45);
+}
+
+.checkout-button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 640px) {
+  .layout-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .open-telegram {
+    align-self: stretch;
+    text-align: center;
+  }
+}

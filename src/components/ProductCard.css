@@ -1,0 +1,112 @@
+.product-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 30px rgba(15, 24, 44, 0.3);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.product-card:focus-within,
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(15, 24, 44, 0.4);
+}
+
+.product-media {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.product-description {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.product-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.35rem;
+}
+
+.product-button {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  transition: background 120ms ease;
+}
+
+.product-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.product-button:not(:disabled):hover,
+.product-button:not(:disabled):focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.product-quantity {
+  min-width: 1.5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+  .product-card {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .product-actions {
+    grid-column: 1 / -1;
+    justify-self: flex-end;
+  }
+}
